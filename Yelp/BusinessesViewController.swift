@@ -12,7 +12,9 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var tableView: UITableView!
     
+    var searchController: UISearchController!
     var businesses: [Business]!
+//    var filteredBusinesses: [Business]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
+        // Collecting businesses
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
                 self.businesses = businesses
@@ -36,6 +39,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             }
         )
         
+//        filteredBusinesses = businesses
+        
         /* Example of Yelp search with more search options specified
          Business.searchWithTerm(term: "Restaurants", sort: .distance, categories: ["asianfusion", "burgers"]) { (businesses, error) in
                 self.businesses = businesses
@@ -46,11 +51,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
          }
          */
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,4 +68,11 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
 }
