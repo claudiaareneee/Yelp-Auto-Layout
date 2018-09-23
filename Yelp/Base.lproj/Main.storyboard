@@ -122,8 +122,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7qB-Wc-OeI" secondAttribute="trailing" id="0VV-Hm-qub"/>
                             <constraint firstAttribute="trailing" secondItem="7qB-Wc-OeI" secondAttribute="trailing" id="4Xf-Wn-jab"/>
                             <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="7qB-Wc-OeI" secondAttribute="bottom" id="HUD-BY-7HF"/>
+                            <constraint firstItem="7qB-Wc-OeI" firstAttribute="top" secondItem="hR0-74-jRp" secondAttribute="bottom" id="JGN-uE-1uC"/>
+                            <constraint firstItem="7qB-Wc-OeI" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" id="KCM-EY-f2s"/>
+                            <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="7qB-Wc-OeI" secondAttribute="bottom" id="h48-yV-Kay"/>
                             <constraint firstItem="7qB-Wc-OeI" firstAttribute="top" secondItem="hR0-74-jRp" secondAttribute="bottom" id="hdU-ya-NoR"/>
                             <constraint firstItem="7qB-Wc-OeI" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" id="oCU-ex-vbY"/>
                         </constraints>
