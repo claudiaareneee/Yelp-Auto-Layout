@@ -72,7 +72,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-My challenge with this project was implementing the search bar. I am having issues getting the search bar to work with the business class. 
+My challenge with this project was implementing the search bar. I was not sure exactly how to implement the search bar. I started by using searchWithItem() method, but I was unable to get this to work due to a "Thread 1: Fatal error: Unexpectedly found nil while unwrapping optional value" error. I switched tactics and went back to the drawing board. I would like to see how to best implement this. 
 
 ## License
 
