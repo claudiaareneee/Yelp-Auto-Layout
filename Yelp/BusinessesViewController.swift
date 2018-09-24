@@ -27,8 +27,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.estimatedRowHeight = 120
         
         
-        filteredData = businesses
-        
         // Initializing with searchResultsController set to nil means that
         // searchController will use this view controller to display the search results
         searchController = UISearchController(searchResultsController: nil)
@@ -51,6 +49,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
                 self.filteredData = businesses
+                self.businesses = businesses
                 self.tableView.reloadData()
                 if let businesses = businesses {
                     for business in businesses {
@@ -93,12 +92,10 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     //I am getting an error here. My app builds and runs, but when I go to search, it crashes with the error: "Thread 1: Fatal error: Unexpectedly found nil while unwrapping optional value"
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
-            Business.searchWithTerm(term: searchText, completion: {
-                (businesses: [Business]?, error: Error?) -> Void in
-                
-                self.filteredData = businesses
-                self.tableView.reloadData()
-                })
+            filteredData = filteredData.isEmpty ? businesses : businesses.filter({ (business) -> Bool in
+                return (business.name?.contains(searchText))!
+            })
+            tableView.reloadData()
         }
     }
 
